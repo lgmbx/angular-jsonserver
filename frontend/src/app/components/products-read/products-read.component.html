@@ -1,0 +1,32 @@
+<table mat-table [dataSource]="data" class="mat-elevation-z3">
+
+    <div matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </div>
+
+    <div matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef>Price</th>
+        <td mat-cell *matCellDef="let element">{{ element.price | currency : "R$ " }}</td>
+    </div>
+
+    <div matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let element">
+            <a routerLink="/products/update/{{ element.id }}" class="edit">
+                <i class="material-icons">
+                    edit
+                </i>
+            </a>
+            <a routerLink="/products" class="delete">
+                <i (click)="teste(element)" class="material-icons">
+                    delete
+                </i>
+            </a>
+        </td>
+    </div>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+
+</table>

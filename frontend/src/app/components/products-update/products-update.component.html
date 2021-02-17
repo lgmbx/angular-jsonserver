@@ -1,0 +1,19 @@
+<mat-card>
+    <mat-card-title>
+        Update Product
+    </mat-card-title>
+
+    <form>
+        <mat-form-field>
+            <input type="text" matInput minlength="1" placeholder="name" [(ngModel)]="product.name" name="name"
+                id="name">
+        </mat-form-field>
+        <mat-form-field>
+            <input type="number" matInput placeholder="Price" [(ngModel)]="product.price" name="price" id="price">
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button (click)="updateProduct()">Update</button>
+    <button mat-raised-button (click)="returnToProducts()" class="ml-3">Back</button>
+
+</mat-card>

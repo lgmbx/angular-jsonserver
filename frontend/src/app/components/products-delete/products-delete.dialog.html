@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Delete Product</h1>
+<p mat-dialog-subtitle>You are about to delete</p>
+<p class="mt-4 mb-4 font-weight-bold" mat-dialog-subtitle>{{data.product | json}} </p>
+<p mat-dialog-subtitle>Are you sure?</p>
+<div class="row d-flex mt-4 justify-content-center">
+    <button class="mr-3" mat-raised-button [mat-dialog-close]="false">No</button>
+    <button class="ml-3" mat-raised-button [mat-dialog-close]="true">Yes</button>
+</div>
